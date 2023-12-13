@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generic Social Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Style_forYou.css">
+</head>
+<body>
+
+    <header id="UsersCard">
+        <div th:each="u : ${otherUsers}" >
+            <div id="cards">
+                <header>
+                    <p id="user-img">
+                        <img alt="foto de perfil" src="https://linguisticauprrp.files.wordpress.com/2018/11/perfil-genc3a9rico.png" width="100" height="100"/>
+                    </p>
+                    <p id="card-username" th:text = "${u.getUserName()}"></p>
+                </header>
+                <div class="d-grid gap-2">
+                    <form th:method="post" th:action="@{/forYou/folow/{userID}/{friendID}(userID=${usuario.getUserID()} , friendID=${u.getUserID()})}" th:object="${usuario}">
+                        <button type="submit" class="btn btn-primary" style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .70rem;">Seguir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="postagens">
+        <div th:each="p :${postagems}">
+            <div>
+                <header id ="post-informations">
+                    <p id="post-date" th:text="${p.getPostDate()}"></p>
+                    <p id="post-user-img">
+                        <img alt="foto de perfil" src="https://linguisticauprrp.files.wordpress.com/2018/11/perfil-genc3a9rico.png" width="50" height="50"/>
+                    </p>
+                    <p id="post-username" th:text = "${p.getAuthor().getUserName()}"></p>
+                </header>
+                    <p id ="post-content" th:text = "${p.getContent()}"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="sideBar">
+        <header>
+            <p>
+                <img alt="foto de perfil" src="https://linguisticauprrp.files.wordpress.com/2018/11/perfil-genc3a9rico.png" width="100" height="100"/>
+            </p>
+            <p id="sideBar-userName" th:text = "${usuario.getUserName()}"></p>
+        </header>
+
+        <div class="d-grid gap-2" role="group" aria-label="Vertical button group" id="sideBar-buttons">
+
+            <button type="button" class="btn btn-dark">Seguir</button>
+
+            <form method="post" th:action="@{/profile/{id}(id=${usuario.getUserID()})}" th:object="${searchUser}">
+                <div>
+                    <label>Search User:</label>
+                    <input type="text" th:field="*{userName}"/>
+                    <button type="submit">BUSCAR</button>
+                </div>
+            </form>
+
+            <a th:href="@{/newPost/{id}(id=${usuario.getUserID()})}"  class="btn btn-primary">NOVA POSTAGEM</a>
+            <a th:href="@{/login/sair}"  class="btn btn-primary">LOGOUT</a>
+        </div>
+    </div>
+</body>
+</html>

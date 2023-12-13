@@ -1,0 +1,83 @@
+*{
+
+}
+
+#cards {
+    background-color: #ffffff;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#UsersCard {
+    background-color: #707375;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 80%;
+}
+
+#card-username {
+    font-size: 10px;
+    font-weight: bolder;
+    margin-top: 0;
+}
+
+p {
+    margin: 6px;
+}
+
+#sideBar {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 80%;
+    height: 100%;
+    width: 20%;
+    background: white;
+}
+#sideBar-userName{
+    z-index: 200;
+    color: black;
+    font-size: 20px;
+    margin: 5px;
+}
+#sideBar-buttons {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+#postagens {
+    background-color: #ffffff;
+    height: auto;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%;
+}
+
+#post-informations {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}

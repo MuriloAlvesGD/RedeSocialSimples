@@ -2,12 +2,11 @@ package br.edu.unifacisa.RedeSocialSimples.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.Set;
+import java.time.LocalDateTime;
+
 
 @Entity
-@Table
+@Table (name = "TB_Posts")
 public class Postagem {
     @Id
     @GeneratedValue ( strategy = GenerationType.AUTO)
@@ -18,15 +17,42 @@ public class Postagem {
     private String content;
 
     @Column (name = "post_date", nullable = false)
-    private Date postDate;
-
-    @Column (name = "post_likes")
-    private Integer likes;
+    private LocalDateTime postDate;
 
     @ManyToOne
     @JoinColumn(name = "user_post_id")
     private Usuario author;
 
-    @OneToMany(mappedBy = "post")
-    private LinkedList<Comentario> ccomments;
+    public Integer getPostID() {
+        return postID;
+    }
+
+    public void setPostID(Integer postID) {
+        this.postID = postID;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public LocalDateTime getPostDate() {
+        return postDate;
+    }
+
+    public void setPostDate(LocalDateTime postDate) {
+        this.postDate = postDate;
+    }
+
+    public Usuario getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Usuario author) {
+        this.author = author;
+    }
+
 }
