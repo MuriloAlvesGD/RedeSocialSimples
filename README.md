@@ -1,7 +1,7 @@
 # Projeto Rede Social - Sistemas de Informação UNIFACISA
 
 Este é o repositório oficial do projeto Rede Social desenvolvido por
-(Murilo Alves, Diogo Fernando e Demostenes Diniz)
+(**Murilo Alves, Diogo Fernando e Demostenes Diniz**)
  no segundo semestre/terceiro trimestre do curso de Sistemas de Informação da UNIFACISA. O projeto foi realizado com o auxílio do professor Bruno Gama Catão.
 
 ## Visão geral
@@ -31,7 +31,7 @@ Agradecemos ao Professor Bruno Gama Catão pelo apoio e suas aulas extremamente 
 # Social Network Project - UNIFACISA Information Systems
 
 This is the official repository of the Social Network project developed by
-(Murilo Alves, Diogo Fernando and Demostenes Diniz)
+(**Murilo Alves, Diogo Fernando and Demostenes Diniz**)
  in the second semester/third quarter of the Information Systems course at UNIFACISA. The project was carried out with the help of professor Bruno Gama Catão.
 
 ## Overview
